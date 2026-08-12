@@ -1,0 +1,27 @@
+﻿@model RelatorioEstagiario.Models.RelatorioEstagio
+
+<h1>Detalhes do Relatório</h1>
+
+<p>
+    <strong>ID:</strong>
+    @Model.Id
+</p>
+
+<p>
+    <strong>Nome:</strong>
+    @Model.Nome
+</p>
+
+<p>
+    <strong>Curso:</strong>
+    @Model.Curso
+</p>
+
+<p>
+    <strong>Empresa:</strong>
+    @Model.EmpresaConcedente
+</p>
+
+<a asp-action="Index">
+    Voltar
+</a>

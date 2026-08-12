@@ -1,0 +1,73 @@
+﻿@model IEnumerable<RelatorioEstagiario.Models.RelatorioEstagio>
+
+@{
+    ViewData["Title"] = "Relatórios de Estágio";
+}
+
+<h1>Relatórios de Estágio</h1>
+
+<p>
+    <a asp-action="Create">Novo Relatório</a>
+</p>
+
+@if (!Model.Any())
+{
+    <p>Nenhum relatório cadastrado.</p>
+}
+else
+{
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Curso</th>
+                <th>Empresa</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            @foreach (var relatorio in Model)
+            {
+                <tr>
+                    <td>
+                        @relatorio.Nome
+                    </td>
+
+                    <td>
+                        @relatorio.Curso
+                    </td>
+
+                    <td>
+                        @relatorio.EmpresaConcedente
+                    </td>
+
+                    <td>
+
+                        <a asp-action="Details"
+                           asp-route-id="@relatorio.Id">
+                            Visualizar
+                        </a>
+
+                        |
+
+                        <a asp-action="Edit"
+                           asp-route-id="@relatorio.Id">
+                            Editar
+                        </a>
+
+                        |
+
+                        <a asp-action="Delete"
+                           asp-route-id="@relatorio.Id">
+                            Excluir
+                        </a>
+
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+}
