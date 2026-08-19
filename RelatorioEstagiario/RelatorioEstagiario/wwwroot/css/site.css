@@ -1,3 +1,7 @@
+@charset "UTF-8";
+
+
+
 html {
   font-size: 14px;
 }
@@ -54,3 +58,88 @@ body {
     .home-buttons a {
         padding: 12px 25px;
     }
+
+form {
+    max-width: 90%;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+.divContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.2rem;
+    background-color: #f8fafc;
+    padding: 1.5rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+    .divContainer > div {
+        display: flex;
+        flex-direction: column;
+    }
+
+.assesment-section {
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1; /* Borda uniforme de 1px em todos os lados */
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    /* Sombra projetada para a esquerda (-6px) e para baixo (6px) */
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+    .assesment-section h2 {
+        color: #0f172a;
+        border-bottom: 2px solid #e2e8f0;
+        padding-bottom: 0.5rem;
+        margin-top: 0;
+    }
+
+    .assesment-section h3 {
+        margin-top: 1.5rem;
+        color: #1e293b;
+    }
+
+/* Campos de lista (1 a 5 e a a c) */
+.inline-blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin: 1rem 0;
+}
+
+    .inline-blocks > div {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .inline-blocks input {
+        flex: 1;
+        padding: 0.4rem;
+        border: 1px solid #cbd5e1;
+        border-radius: 4px;
+    }
+
+fieldset {
+    border: 1px solid #e2e8f0;
+    background-color: #f8fafc;
+    border-radius: 6px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+legend {
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0 0.5rem;
+    color: #334155;
+}
+
+fieldset label {
+    margin-right: 1.2rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
