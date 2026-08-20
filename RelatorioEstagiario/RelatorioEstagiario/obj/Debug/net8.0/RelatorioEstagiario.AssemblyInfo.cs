@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RelatorioEstagiario")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+48a2ec9f26cf8849a02b9d73ad1172a7c48b420c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+79bfe669123cb8c71e79b067396f6e22dbc5bafa")]
 [assembly: System.Reflection.AssemblyProductAttribute("RelatorioEstagiario")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RelatorioEstagiario")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

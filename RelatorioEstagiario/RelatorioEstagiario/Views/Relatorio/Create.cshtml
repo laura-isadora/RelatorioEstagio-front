@@ -6,14 +6,16 @@
 
 <h1>Novo Relatório de Estágio</h1>
 
-<div>
+
     <form asp-action="Create" method="post">
 
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
+        
+        <div class="divContainer">
+
         <h2>1) Identificação do Estagiário</h2>
 
-        <div class="divContainer">
             <div>
                 <label asp-for="Nome">Nome completo:</label>
                 <input asp-for="Nome" />
@@ -93,472 +95,469 @@
                 <input asp-for="FimPeriodoAvaliado" type="date" />
             </div>
         </div>
-</div>
 
 
 
-    <div class="assesment-section">
-        <h2>3) Avaliação realizada pelo estagiário</h2>
 
-        <h3>Conteúdo do estágio desenvolvido</h3>
+        <div class="assesment-section">
+            <h2>3) Avaliação realizada pelo estagiário</h2>
 
-        <p>
-            Identifique as atividades que você desenvolveu com maior frequência,
-            no último período:
-        </p>
+            <h3>Conteúdo do estágio desenvolvido</h3>
 
-        <div class="inline-blocks">
-            <div>
-                <label asp-for="Atividade1">1)</label>
-                <input asp-for="Atividade1" />
+            <p>
+                Identifique as atividades que você desenvolveu com maior frequência,
+                no último período:
+            </p>
+
+            <div class="inline-blocks">
+                <div>
+                    <label asp-for="Atividade1">1)</label>
+                    <input asp-for="Atividade1" />
+                </div>
+
+                <div>
+                    <label asp-for="Atividade2">2)</label>
+                    <input asp-for="Atividade2" />
+                </div>
+
+                <div>
+                    <label asp-for="Atividade3">3)</label>
+                    <input asp-for="Atividade3" />
+                </div>
+
+                <div>
+                    <label asp-for="Atividade4">4)</label>
+                    <input asp-for="Atividade4" />
+                </div>
+
+                <div>
+                    <label asp-for="Atividade5">5)</label>
+                    <input asp-for="Atividade5" />
+                </div>
             </div>
 
-            <div>
-                <label asp-for="Atividade2">2)</label>
-                <input asp-for="Atividade2" />
-            </div>
+            <h3>Classifique sua opinião quanto ao Estágio</h3>
 
-            <div>
-                <label asp-for="Atividade3">3)</label>
-                <input asp-for="Atividade3" />
-            </div>
+            <p>
+                Para cada questão abaixo marque X no critério correspondente:
+            </p>
 
-            <div>
-                <label asp-for="Atividade4">4)</label>
-                <input asp-for="Atividade4" />
-            </div>
+            <fieldset>
+                <legend>
+                    1. As atividades desenvolvidas durante o semestre estavam
+                    vinculadas à sua área de formação acadêmico-profissional?
+                </legend>
 
-            <div>
-                <label asp-for="Atividade5">5)</label>
-                <input asp-for="Atividade5" />
-            </div>
-        </div>
-
-        <h3>Classifique sua opinião quanto ao Estágio</h3>
-
-        <p>
-            Para cada questão abaixo marque X no critério correspondente:
-        </p>
-
-        <fieldset>
-            <legend>
-                1. As atividades desenvolvidas durante o semestre estavam
-                vinculadas à sua área de formação acadêmico-profissional?
-            </legend>
-
-            <label>
-                <input asp-for="AtividadesVinculadas" type="radio" value="Sim" />
-                Sim
-            </label>
-
-            <label>
-                <input asp-for="AtividadesVinculadas" type="radio" value="Não" />
-                Não
-            </label>
-
-            <label>
-                <input asp-for="AtividadesVinculadas" type="radio" value="Às Vezes" />
-                Às Vezes
-            </label>
-
-            <label>
-                <input asp-for="AtividadesVinculadas" type="radio" value="Nunca" />
-                Nunca
-            </label>
-        </fieldset>
-
-
-        <fieldset>
-            <legend>
-                2. As atividades desenvolvidas durante o semestre contribuíram
-                para sua formação acadêmico-profissional?
-            </legend>
-
-            <label>
-                <input asp-for="ContribuicaoFormacao" type="radio" value="Sim" />
-                Sim
-            </label>
-
-            <label>
-                <input asp-for="ContribuicaoFormacao" type="radio" value="Não" />
-                Não
-            </label>
-
-            <label>
-                <input asp-for="ContribuicaoFormacao" type="radio" value="Às Vezes" />
-                Às Vezes
-            </label>
-
-            <label>
-                <input asp-for="ContribuicaoFormacao" type="radio" value="Nunca" />
-                Nunca
-            </label>
-        </fieldset>
-
-
-        <fieldset>
-            <legend>
-                3. Tenho me atualizado constantemente visando progredir
-                em minha formação profissional?
-            </legend>
-
-            <label>
-                <input asp-for="AtualizacaoProfissional" type="radio" value="Sim" />
-                Sim
-            </label>
-
-            <label>
-                <input asp-for="AtualizacaoProfissional" type="radio" value="Não" />
-                Não
-            </label>
-
-            <label>
-                <input asp-for="AtualizacaoProfissional" type="radio" value="Às Vezes" />
-                Às Vezes
-            </label>
-
-            <label>
-                <input asp-for="AtualizacaoProfissional" type="radio" value="Nunca" />
-                Nunca
-            </label>
-        </fieldset>
-
-
-        <fieldset>
-            <legend>
-                4. A supervisão recebida está adequada para a realização
-                das atividades do estágio?
-            </legend>
-
-            <label>
-                <input asp-for="SupervisaoAdequada" type="radio" value="Sim" />
-                Sim
-            </label>
-
-            <label>
-                <input asp-for="SupervisaoAdequada" type="radio" value="Não" />
-                Não
-            </label>
-
-            <label>
-                <input asp-for="SupervisaoAdequada" type="radio" value="Às Vezes" />
-                Às Vezes
-            </label>
-
-            <label>
-                <input asp-for="SupervisaoAdequada" type="radio" value="Nunca" />
-                Nunca
-            </label>
-        </fieldset>
-
-
-        <h3>5. Aspectos positivos</h3>
-
-        <p>
-            Cite 03 (três) aspectos do estágio que você considera positivos
-            para sua formação acadêmico-profissional.
-        </p>
-
-        <div class="inline-blocks">
-            <div>
-                <label asp-for="AspectoPositivo1">a)</label>
-                <input asp-for="AspectoPositivo1" />
-            </div>
-
-            <div>
-                <label asp-for="AspectoPositivo2">b)</label>
-                <input asp-for="AspectoPositivo2" />
-            </div>
-
-            <div>
-                <label asp-for="AspectoPositivo3">c)</label>
-                <input asp-for="AspectoPositivo3" />
-            </div>
-        </div>
-
-
-        <h3>6. Aspectos negativos</h3>
-
-        <p>
-            Cite 03 (três) aspectos do estágio que você considera negativos
-            para sua formação acadêmico-profissional.
-        </p>
-
-        <div class="inline-blocks">
-            <div>
-                <label asp-for="AspectoNegativo1">a)</label>
-                <input asp-for="AspectoNegativo1" />
-            </div>
-
-            <div>
-                <label asp-for="AspectoNegativo2">b)</label>
-                <input asp-for="AspectoNegativo2" />
-            </div>
-
-            <div>
-                <label asp-for="AspectoNegativo3">c)</label>
-                <input asp-for="AspectoNegativo3" />
-            </div>
-
-
-            <div>
-                <label asp-for="Satisfacao">
-                    Em termos de satisfação pessoal, que conceito você atribui
-                    ao seu estágio (de 1 a 10)?
+                <label>
+                    <input asp-for="AtividadesVinculadas" type="radio" value="Sim" />
+                    Sim
                 </label>
 
-                <input asp-for="Satisfacao" type="number" min="1" max="10" />
+                <label>
+                    <input asp-for="AtividadesVinculadas" type="radio" value="Não" />
+                    Não
+                </label>
 
-                <span asp-validation-for="Satisfacao" class="text-danger"></span>
+                <label>
+                    <input asp-for="AtividadesVinculadas" type="radio" value="Às Vezes" />
+                    Às Vezes
+                </label>
+
+                <label>
+                    <input asp-for="AtividadesVinculadas" type="radio" value="Nunca" />
+                    Nunca
+                </label>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>
+                    2. As atividades desenvolvidas durante o semestre contribuíram
+                    para sua formação acadêmico-profissional?
+                </legend>
+
+                <label>
+                    <input asp-for="ContribuicaoFormacao" type="radio" value="Sim" />
+                    Sim
+                </label>
+
+                <label>
+                    <input asp-for="ContribuicaoFormacao" type="radio" value="Não" />
+                    Não
+                </label>
+
+                <label>
+                    <input asp-for="ContribuicaoFormacao" type="radio" value="Às Vezes" />
+                    Às Vezes
+                </label>
+
+                <label>
+                    <input asp-for="ContribuicaoFormacao" type="radio" value="Nunca" />
+                    Nunca
+                </label>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>
+                    3. Tenho me atualizado constantemente visando progredir
+                    em minha formação profissional?
+                </legend>
+
+                <label>
+                    <input asp-for="AtualizacaoProfissional" type="radio" value="Sim" />
+                    Sim
+                </label>
+
+                <label>
+                    <input asp-for="AtualizacaoProfissional" type="radio" value="Não" />
+                    Não
+                </label>
+
+                <label>
+                    <input asp-for="AtualizacaoProfissional" type="radio" value="Às Vezes" />
+                    Às Vezes
+                </label>
+
+                <label>
+                    <input asp-for="AtualizacaoProfissional" type="radio" value="Nunca" />
+                    Nunca
+                </label>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>
+                    4. A supervisão recebida está adequada para a realização
+                    das atividades do estágio?
+                </legend>
+
+                <label>
+                    <input asp-for="SupervisaoAdequada" type="radio" value="Sim" />
+                    Sim
+                </label>
+
+                <label>
+                    <input asp-for="SupervisaoAdequada" type="radio" value="Não" />
+                    Não
+                </label>
+
+                <label>
+                    <input asp-for="SupervisaoAdequada" type="radio" value="Às Vezes" />
+                    Às Vezes
+                </label>
+
+                <label>
+                    <input asp-for="SupervisaoAdequada" type="radio" value="Nunca" />
+                    Nunca
+                </label>
+            </fieldset>
+
+
+            <h3>5. Aspectos positivos</h3>
+
+            <p>
+                Cite 03 (três) aspectos do estágio que você considera positivos
+                para sua formação acadêmico-profissional.
+            </p>
+
+            <div class="inline-blocks">
+                <div>
+                    <label asp-for="AspectoPositivo1">a)</label>
+                    <input asp-for="AspectoPositivo1" />
+                </div>
+
+                <div>
+                    <label asp-for="AspectoPositivo2">b)</label>
+                    <input asp-for="AspectoPositivo2" />
+                </div>
+
+                <div>
+                    <label asp-for="AspectoPositivo3">c)</label>
+                    <input asp-for="AspectoPositivo3" />
+                </div>
+            </div>
+
+
+            <h3>6. Aspectos negativos</h3>
+
+            <p>
+                Cite 03 (três) aspectos do estágio que você considera negativos
+                para sua formação acadêmico-profissional.
+            </p>
+
+            <div class="inline-blocks">
+                <div>
+                    <label asp-for="AspectoNegativo1">a)</label>
+                    <input asp-for="AspectoNegativo1" />
+                </div>
+
+                <div>
+                    <label asp-for="AspectoNegativo2">b)</label>
+                    <input asp-for="AspectoNegativo2" />
+                </div>
+
+                <div>
+                    <label asp-for="AspectoNegativo3">c)</label>
+                    <input asp-for="AspectoNegativo3" />
+                </div>
+
+
+                <div>
+                    <label asp-for="Satisfacao">
+                        Em termos de satisfação pessoal, que conceito você atribui
+                        ao seu estágio (de 1 a 10)?
+                    </label>
+
+                    <input asp-for="Satisfacao" type="number" min="1" max="10" />
+
+                    <span asp-validation-for="Satisfacao" class="text-danger"></span>
+                </div>
             </div>
         </div>
-    </div>
 
 
-    <div class="cardSupervisor">
-        <h2>4) Avaliação realizada pelo supervisor de estágio</h2>
+        <div class="assesment-section">
+            <h2>4) Avaliação realizada pelo supervisor de estágio</h2>
 
-        <p>
-            Para cada questão abaixo marque X no critério correspondente:
-        </p>
-
-
-        <fieldset>
-            <legend>
-                1. O estagiário compareceu nos horários previstos?
-                (O objetivo é avaliar a assiduidade do estagiário).
-            </legend>
-
-            <label>
-                <input asp-for="Assiduidade" type="radio" value="Sim" />
-                Sim
-            </label>
-
-            <label>
-                <input asp-for="Assiduidade" type="radio" value="Não" />
-                Não
-            </label>
-
-            <label>
-                <input asp-for="Assiduidade" type="radio" value="Às Vezes" />
-                Às Vezes
-            </label>
-
-            <label>
-                <input asp-for="Assiduidade" type="radio" value="Nunca" />
-                Nunca
-            </label>
-        </fieldset>
+            <p>
+                Para cada questão abaixo marque X no critério correspondente:
+            </p>
 
 
-        <fieldset>
-            <legend>
-                2. O estagiário demonstrou empenho e dinamismo no desenvolvimento
-                das atividades que lhe foram atribuídas?
-                (O objetivo é avaliar o comprometimento do estagiário).
-            </legend>
+            <fieldset>
+                <legend>
+                    1. O estagiário compareceu nos horários previstos?
+                    (O objetivo é avaliar a assiduidade do estagiário).
+                </legend>
 
-            <label>
-                <input asp-for="EmpenhoDinamismo" type="radio" value="Sim" />
-                Sim
-            </label>
+                <label>
+                    <input asp-for="Assiduidade" type="radio" value="Sim" />
+                    Sim
+                </label>
 
-            <label>
-                <input asp-for="EmpenhoDinamismo" type="radio" value="Não" />
-                Não
-            </label>
+                <label>
+                    <input asp-for="Assiduidade" type="radio" value="Não" />
+                    Não
+                </label>
 
-            <label>
-                <input asp-for="EmpenhoDinamismo" type="radio" value="Às Vezes" />
-                Às Vezes
-            </label>
+                <label>
+                    <input asp-for="Assiduidade" type="radio" value="Às Vezes" />
+                    Às Vezes
+                </label>
 
-            <label>
-                <input asp-for="EmpenhoDinamismo" type="radio" value="Nunca" />
-                Nunca
-            </label>
-        </fieldset>
-
-
-        <fieldset>
-            <legend>
-                3. O estagiário demonstrou qualidade, eficácia e cumprimento
-                de prazos nas atividades a ele atribuídas?
-                (O objetivo é avaliar o comprometimento do estagiário).
-            </legend>
-
-            <label>
-                <input asp-for="QualidadeEficaciaPrazos" type="radio" value="Sim" />
-                Sim
-            </label>
-
-            <label>
-                <input asp-for="QualidadeEficaciaPrazos" type="radio" value="Não" />
-                Não
-            </label>
-
-            <label>
-                <input asp-for="QualidadeEficaciaPrazos" type="radio" value="Às Vezes" />
-                Às Vezes
-            </label>
-
-            <label>
-                <input asp-for="QualidadeEficaciaPrazos" type="radio" value="Nunca" />
-                Nunca
-            </label>
-        </fieldset>
+                <label>
+                    <input asp-for="Assiduidade" type="radio" value="Nunca" />
+                    Nunca
+                </label>
+            </fieldset>
 
 
-        <fieldset>
-            <legend>
-                4. O estagiário demonstrou domínio técnico do assunto
-                e atualização de conhecimentos?
-                (O objetivo é avaliar o conhecimento do estagiário).
-            </legend>
+            <fieldset>
+                <legend>
+                    2. O estagiário demonstrou empenho e dinamismo no desenvolvimento
+                    das atividades que lhe foram atribuídas?
+                    (O objetivo é avaliar o comprometimento do estagiário).
+                </legend>
 
-            <label>
-                <input asp-for="DominioTecnico" type="radio" value="Sim" />
-                Sim
-            </label>
+                <label>
+                    <input asp-for="EmpenhoDinamismo" type="radio" value="Sim" />
+                    Sim
+                </label>
 
-            <label>
-                <input asp-for="DominioTecnico" type="radio" value="Não" />
-                Não
-            </label>
+                <label>
+                    <input asp-for="EmpenhoDinamismo" type="radio" value="Não" />
+                    Não
+                </label>
 
-            <label>
-                <input asp-for="DominioTecnico" type="radio" value="Às Vezes" />
-                Às Vezes
-            </label>
+                <label>
+                    <input asp-for="EmpenhoDinamismo" type="radio" value="Às Vezes" />
+                    Às Vezes
+                </label>
 
-            <label>
-                <input asp-for="DominioTecnico" type="radio" value="Nunca" />
-                Nunca
-            </label>
-        </fieldset>
-
-
-        <fieldset>
-            <legend>
-                5. Demonstrou bom relacionamento com o(s) orientador(es)
-                do estágio?
-            </legend>
-
-            <label>
-                <input asp-for="RelacionamentoOrientador" type="radio" value="Sim" />
-                Sim
-            </label>
-
-            <label>
-                <input asp-for="RelacionamentoOrientador" type="radio" value="Não" />
-                Não
-            </label>
-
-            <label>
-                <input asp-for="RelacionamentoOrientador" type="radio" value="Às Vezes" />
-                Às Vezes
-            </label>
-
-            <label>
-                <input asp-for="RelacionamentoOrientador" type="radio" value="Nunca" />
-                Nunca
-            </label>
-        </fieldset>
+                <label>
+                    <input asp-for="EmpenhoDinamismo" type="radio" value="Nunca" />
+                    Nunca
+                </label>
+            </fieldset>
 
 
-        <fieldset>
-            <legend>
-                6. Demonstrou bom relacionamento com os colegas de estágio
-                e demais elementos dentro da empresa?
-            </legend>
+            <fieldset>
+                <legend>
+                    3. O estagiário demonstrou qualidade, eficácia e cumprimento
+                    de prazos nas atividades a ele atribuídas?
+                    (O objetivo é avaliar o comprometimento do estagiário).
+                </legend>
 
-            <label>
-                <input asp-for="RelacionamentoColegas" type="radio" value="Sim" />
-                Sim
-            </label>
+                <label>
+                    <input asp-for="QualidadeEficaciaPrazos" type="radio" value="Sim" />
+                    Sim
+                </label>
 
-            <label>
-                <input asp-for="RelacionamentoColegas" type="radio" value="Não" />
-                Não
-            </label>
+                <label>
+                    <input asp-for="QualidadeEficaciaPrazos" type="radio" value="Não" />
+                    Não
+                </label>
 
-            <label>
-                <input asp-for="RelacionamentoColegas" type="radio" value="Às Vezes" />
-                Às Vezes
-            </label>
+                <label>
+                    <input asp-for="QualidadeEficaciaPrazos" type="radio" value="Às Vezes" />
+                    Às Vezes
+                </label>
 
-            <label>
-                <input asp-for="RelacionamentoColegas" type="radio" value="Nunca" />
-                Nunca
-            </label>
-        </fieldset>
-
-
-        <fieldset>
-            <legend>
-                7. Apresenta facilidade e espontaneidade em agir frente
-                às pessoas, fatos e situações?
-            </legend>
-
-            <label>
-                <input asp-for="FacilidadeEspontaneidade" type="radio" value="Sim" />
-                Sim
-            </label>
-
-            <label>
-                <input asp-for="FacilidadeEspontaneidade" type="radio" value="Não" />
-                Não
-            </label>
-
-            <label>
-                <input asp-for="FacilidadeEspontaneidade" type="radio" value="Às Vezes" />
-                Às Vezes
-            </label>
-
-            <label>
-                <input asp-for="FacilidadeEspontaneidade" type="radio" value="Nunca" />
-                Nunca
-            </label>
-        </fieldset>
+                <label>
+                    <input asp-for="QualidadeEficaciaPrazos" type="radio" value="Nunca" />
+                    Nunca
+                </label>
+            </fieldset>
 
 
-        <div>
-            <label asp-for="OutrosAspectos">
-                8. Outros aspectos que julgar relevantes:
-            </label>
+            <fieldset>
+                <legend>
+                    4. O estagiário demonstrou domínio técnico do assunto
+                    e atualização de conhecimentos?
+                    (O objetivo é avaliar o conhecimento do estagiário).
+                </legend>
 
-            <textarea asp-for="OutrosAspectos"></textarea>
+                <label>
+                    <input asp-for="DominioTecnico" type="radio" value="Sim" />
+                    Sim
+                </label>
+
+                <label>
+                    <input asp-for="DominioTecnico" type="radio" value="Não" />
+                    Não
+                </label>
+
+                <label>
+                    <input asp-for="DominioTecnico" type="radio" value="Às Vezes" />
+                    Às Vezes
+                </label>
+
+                <label>
+                    <input asp-for="DominioTecnico" type="radio" value="Nunca" />
+                    Nunca
+                </label>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>
+                    5. Demonstrou bom relacionamento com o(s) orientador(es)
+                    do estágio?
+                </legend>
+
+                <label>
+                    <input asp-for="RelacionamentoOrientador" type="radio" value="Sim" />
+                    Sim
+                </label>
+
+                <label>
+                    <input asp-for="RelacionamentoOrientador" type="radio" value="Não" />
+                    Não
+                </label>
+
+                <label>
+                    <input asp-for="RelacionamentoOrientador" type="radio" value="Às Vezes" />
+                    Às Vezes
+                </label>
+
+                <label>
+                    <input asp-for="RelacionamentoOrientador" type="radio" value="Nunca" />
+                    Nunca
+                </label>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>
+                    6. Demonstrou bom relacionamento com os colegas de estágio
+                    e demais elementos dentro da empresa?
+                </legend>
+
+                <label>
+                    <input asp-for="RelacionamentoColegas" type="radio" value="Sim" />
+                    Sim
+                </label>
+
+                <label>
+                    <input asp-for="RelacionamentoColegas" type="radio" value="Não" />
+                    Não
+                </label>
+
+                <label>
+                    <input asp-for="RelacionamentoColegas" type="radio" value="Às Vezes" />
+                    Às Vezes
+                </label>
+
+                <label>
+                    <input asp-for="RelacionamentoColegas" type="radio" value="Nunca" />
+                    Nunca
+                </label>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>
+                    7. Apresenta facilidade e espontaneidade em agir frente
+                    às pessoas, fatos e situações?
+                </legend>
+
+                <label>
+                    <input asp-for="FacilidadeEspontaneidade" type="radio" value="Sim" />
+                    Sim
+                </label>
+
+                <label>
+                    <input asp-for="FacilidadeEspontaneidade" type="radio" value="Não" />
+                    Não
+                </label>
+
+                <label>
+                    <input asp-for="FacilidadeEspontaneidade" type="radio" value="Às Vezes" />
+                    Às Vezes
+                </label>
+
+                <label>
+                    <input asp-for="FacilidadeEspontaneidade" type="radio" value="Nunca" />
+                    Nunca
+                </label>
+            </fieldset>
+
+
+            <div class="inline-blocks">
+                <label asp-for="OutrosAspectos">
+                    8. Outros aspectos que julgar relevantes:
+                </label>
+
+                <textarea asp-for="OutrosAspectos"></textarea>
+            </div>
         </div>
-    </div>
-        <div>
-            <div>
-                <div>
+
+        <div class="bloco-assinaturas">
+
+            <div class="area-assinatura">
+                <div class="linha-assinatura"></div>
                     <span>Supervisor</span>
-                </div>
             </div>
 
-            <div>
-                <div>
-                    <span>Estagiário</span>
-                </div>
+            <div class="area-assinatura">
+                <div class="linha-assinatura"></div>
+                <span>Estagiário</span>
             </div>
 
-            <div>
-                <div>
-                    <span>Instituição de Ensino</span>
-                </div>
+            <div class="area-assinatura">
+                <div class="linha-assinatura"></div>
+                <span>Instituição de Ensino</span>
             </div>
+
         </div>
     
+        <br />
 
+        <button class="btn btn-primary" type="submit">Salvar Relatório</button>
 
-    <br />
-
-    <button type="submit">Salvar Relatório</button>
-
-    <a asp-action="Index">Voltar</a>
-
-</form>
+        <a asp-action="Index" class="btn btn-outline-secondary">Voltar</a>
+    </form>
 
 @section Scripts {
     @{
