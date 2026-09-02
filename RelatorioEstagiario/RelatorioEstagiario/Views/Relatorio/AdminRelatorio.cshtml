@@ -1,0 +1,46 @@
+﻿@model IEnumerable<RelatorioEstagiario.Models.RelatorioEstagio>
+
+@{
+    ViewData["Title"] = "Painel Administrativo";
+}
+
+<h1>Painel Administrativo</h1>
+
+<h2>Relatórios de Estágio</h2>
+
+@if (!Model.Any())
+{
+    <p>Nenhum relatório enviado.</p>
+}
+else
+{
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Matrícula</th>
+                <th>Curso</th>
+                <th>Empresa</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var relatorio in Model)
+            {
+                <tr>
+                    <td>@relatorio.Nome</td>
+                    <td>@relatorio.Matricula</td>
+                    <td>@relatorio.Curso</td>
+                    <td>@relatorio.EmpresaConcedente</td>
+                    <td>
+                        <a asp-action="Details"
+                           asp-route-id="@relatorio.Id">
+                            Visualizar
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

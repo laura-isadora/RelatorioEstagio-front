@@ -1,0 +1,67 @@
+﻿@model RelatorioEstagiario.Models.RelatorioEstagio
+
+@{
+    ViewData["Title"] = "Detalhes do Relatório";
+}
+
+<h1>Detalhes do Relatório</h1>
+
+<h2>Dados do Estagiário</h2>
+
+<dl>
+    <dt>Nome</dt>
+    <dd>@Model.Nome</dd>
+
+    <dt>Matrícula</dt>
+    <dd>@Model.Matricula</dd>
+
+    <dt>Curso</dt>
+    <dd>@Model.Curso</dd>
+
+    <dt>Semestre</dt>
+    <dd>@Model.Semestre</dd>
+</dl>
+
+<h2>Dados da Empresa</h2>
+
+<dl>
+    <dt>Instituição de Ensino</dt>
+    <dd>@Model.IE</dd>
+
+    <dt>Empresa Concedente</dt>
+    <dd>@Model.EmpresaConcedente</dd>
+
+    <dt>Departamento</dt>
+    <dd>@Model.Departamento</dd>
+
+    <dt>Cargo</dt>
+    <dd>@Model.Cargo</dd>
+</dl>
+
+<h2>Supervisor</h2>
+
+<dl>
+    <dt>Nome</dt>
+    <dd>@Model.NomeSupervisor</dd>
+
+    <dt>Formação</dt>
+    <dd>@Model.FormacaoSupervisor</dd>
+
+    <dt>Registro no Conselho</dt>
+    <dd>@Model.RegistroConselho</dd>
+</dl>
+
+<h2>Período</h2>
+
+<dl>
+    <dt>Início do estágio</dt>
+    <dd>@Model.InicioEstagio?.ToString("dd/MM/yyyy")</dd>
+
+    <dt>Início do período avaliado</dt>
+    <dd>@Model.InicioPeriodoAvaliado?.ToString("dd/MM/yyyy")</dd>
+
+    <dt>Fim do período avaliado</dt>
+    <dd>@Model.FimPeriodoAvaliado?.ToString("dd/MM/yyyy")</dd>
+</dl>
+
+<a asp-action="Index">Voltar</a>

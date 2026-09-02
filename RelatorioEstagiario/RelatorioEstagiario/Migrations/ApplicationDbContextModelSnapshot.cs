@@ -22,6 +22,48 @@ namespace RelatorioEstagiario.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("RelatorioEstagiario.Models.Adm.UsuarioModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Perfil")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SenhaHash")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TokenRedefinicao")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("TokenRedefinicaoExpiraEm")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Usuario")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Email")
+                        .IsUnique();
+
+                    b.ToTable("Usuarios");
+                });
+
             modelBuilder.Entity("RelatorioEstagiario.Models.RelatorioEstagio", b =>
                 {
                     b.Property<int>("Id")
@@ -99,6 +141,7 @@ namespace RelatorioEstagiario.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Departamento")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("DominioTecnico")
@@ -118,6 +161,7 @@ namespace RelatorioEstagiario.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("FimPeriodoAvaliado")
+                        .IsRequired()
                         .HasColumnType("datetime2");
 
                     b.Property<string>("FormacaoSupervisor")
@@ -129,9 +173,11 @@ namespace RelatorioEstagiario.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("InicioEstagio")
+                        .IsRequired()
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("InicioPeriodoAvaliado")
+                        .IsRequired()
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Matricula")

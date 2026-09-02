@@ -1,0 +1,80 @@
+﻿@model RelatorioEstagiario.Models.Adm.LoginModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+
+            <div class="card shadow">
+
+                <div class="card-body">
+
+                    <h2 class="text-center mb-4">
+                        Login
+                    </h2>
+
+                    <form asp-controller="Login"
+                          asp-action="Entrar"
+                          method="post">
+
+                        <div asp-validation-summary="ModelOnly"
+                             class="text-danger mb-3">
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label asp-for="Usuario"
+                                   class="form-label">
+                                Usuário
+                            </label>
+
+                            <input asp-for="Usuario"
+                                   class="form-control"
+                                   autocomplete="username" />
+
+                            <span asp-validation-for="Usuario"
+                                  class="text-danger">
+                            </span>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label asp-for="Senha"
+                                   class="form-label">
+                                Senha
+                            </label>
+
+                            <input asp-for="Senha"
+                                   type="password"
+                                   class="form-control"
+                                   autocomplete="current-password" />
+
+                            <span asp-validation-for="Senha"
+                                  class="text-danger">
+                            </span>
+
+                        </div>
+
+                        <button type="submit"
+                                class="btn btn-primary w-100">
+                            Entrar
+                        </button>
+
+                        <a asp-controller="Login"
+                           asp-action="EsqueciSenha">
+                            Esqueci minha senha
+                        </a>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

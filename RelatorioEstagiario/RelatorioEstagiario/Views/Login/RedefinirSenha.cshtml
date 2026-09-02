@@ -1,0 +1,47 @@
+﻿@model RelatorioEstagiario.Models.Adm.RedefinirSenhaModel
+
+@{
+    ViewData["Title"] = "Redefinir senha";
+}
+
+<h2>Redefinir senha</h2>
+
+<form asp-action="RedefinirSenha" method="post">
+
+    <input asp-for="Token" type="hidden" />
+
+    <div>
+        <label asp-for="NovaSenha">
+            Nova senha
+        </label>
+
+        <input asp-for="NovaSenha" type="password" />
+
+        <span asp-validation-for="NovaSenha"
+              class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="ConfirmarSenha">
+            Confirmar senha
+        </label>
+
+        <input asp-for="ConfirmarSenha" type="password" />
+
+        <span asp-validation-for="ConfirmarSenha"
+              class="text-danger"></span>
+    </div>
+
+    <br />
+
+    <button type="submit" class="btn btn-primary">
+        Salvar nova senha
+    </button>
+
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

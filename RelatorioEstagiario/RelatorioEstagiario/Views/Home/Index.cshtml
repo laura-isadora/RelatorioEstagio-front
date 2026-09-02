@@ -1,35 +1,64 @@
 ﻿@{
-    ViewData["Title"] = "Relatório de Estágio";
+    ViewData["Title"] = "Relatório de Estagiário";
 }
 
-<div class="home-container">
+<div class="container mt-5">
 
-    <div class="home-content">
+    <div class="text-center mb-5">
+        <h1>Relatório de Estagiário</h1>
 
-        <h1>Relatório de Estágio</h1>
-
-        <p>
-            Bem-vindo ao sistema de relatório de estágio.
+        <p class="lead">
+            Selecione uma opção para continuar
         </p>
+    </div>
 
-        <p>
-            Aqui você poderá preencher, consultar e gerenciar
-            seus relatórios de estágio.
-        </p>
+    <div class="row justify-content-center">
 
-        <div class="home-buttons">
+        <!-- Novo Relatório -->
+        <div class="col-md-4 mb-3">
 
-            <a asp-controller="Relatorio"
-               asp-action="Create"
-               class="btn btn-primary">
-                Novo Relatório
-            </a>
+            <div class="card shadow h-100">
+                <div class="card-body text-center">
 
-            <a asp-controller="Relatorio"
-               asp-action="Index"
-               class="btn btn-secondary">
-                Meus Relatórios
-            </a>
+                    <h3>Novo Relatório</h3>
+
+                    <p>
+                        Deseja preencher um novo relatório
+                        de estágio?
+                    </p>
+
+                    <a asp-controller="Relatorio"
+                       asp-action="Create"
+                       class="btn btn-primary">
+                        Fazer novo relatório
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Administrador -->
+        <div class="col-md-4 mb-3">
+
+            <div class="card shadow h-100">
+                <div class="card-body text-center">
+
+                    <h3>Administrador</h3>
+
+                    <p>
+                        Acesse a área administrativa
+                        do sistema.
+                    </p>
+
+                    <a asp-controller="Login"
+                       asp-action="Index"
+                       class="btn btn-dark">
+                        Área administrativa
+                    </a>
+
+                </div>
+            </div>
 
         </div>
 
